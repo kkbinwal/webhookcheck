@@ -22,23 +22,16 @@ PROJECT_URL = 'https://bitbucket.atlassian.molexcloud.com/scm/iasi/'
 
 def isValidPR(hookPayload) {
     def payload = readJSON file: hookPayload
-    //def inputJSON = new JsonSlurper().parse(hookPayload)
-   // def payload = inputJSON.keySet() as List
-    
-    print("payload is:${payload}")
-
     def eventKey = payload.eventKey
-    print("eventKey is:${eventKey}")
-
     if(eventKey != null) {
         if(eventKey.startsWith("pr")) {
-            def fromMaster = payload.pullRequest.fromRef.id.split('/')[-1]
-            def toMaster = payload.pullRequest.toRef.id.split('/')[-1]
-            if(fromMaster == null || toMaster == null)return false
-            if(fromMaster.equals("master") || toMaster.equals("master")) {
-                return true
-            } 
-            print("PR is neither from master branch not to master branch")
+            def srcBranch = payload.pullRequest.fromRef.id.split('/')[-1]
+            def targetBranch = payload.pullRequest.toRef.id.split('/')[-1]
+            def error_msg = "PR Error: neither source branch nor target branch is master"
+            if(fromMaster == null || toMaster == null || (!srcBranch.equals("master") && !targetBranch.equals("master"))){
+                print("${error_msg}")
+                return false
+            }
             return false
         }
     }
