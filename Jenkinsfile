@@ -32,7 +32,6 @@ def isValidPR(hookPayload) {
                 print("${error_msg}")
                 return false
             }
-            return false
         }
     }
     return true
