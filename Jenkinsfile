@@ -21,7 +21,7 @@ PROJECT_URL = 'https://bitbucket.atlassian.molexcloud.com/scm/iasi/'
 
 
 def isValidPR(hookPayload) {
-    def payload = readJSON text: hookPayload
+    def payload = readJSON file: hookPayload
     def eventKey = payload.eventKey
     if(eventKey != null) {
         if(eventKey.startsWith("pr")) {
