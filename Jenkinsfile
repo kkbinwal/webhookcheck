@@ -64,7 +64,6 @@ pipeline {
               print("invalid PR")
             }          
           } catch(Exception e) {
-            log.print_debug("${e.message}")
             echo "No payload present, using default configuration."
             settings.PROJECT_REPOS = project_repos
 
