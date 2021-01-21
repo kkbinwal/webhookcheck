@@ -21,9 +21,9 @@ PROJECT_URL = 'https://bitbucket.atlassian.molexcloud.com/scm/iasi/'
 
 
 def isValidPR(hookPayload) {
-    //def payload = readJSON text: hookPayload
-    def inputJSON = new JsonSlurper().parse(hookPayload)
-    def payload = inputJSON.keySet() as List
+    def payload = readJSON file: hookPayload
+    //def inputJSON = new JsonSlurper().parse(hookPayload)
+   // def payload = inputJSON.keySet() as List
     
     print("payload is:${payload}")
 
