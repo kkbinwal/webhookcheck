@@ -1,0 +1,12 @@
+molex.iot.prov.diservice:
+  url: "https://bitbucket.atlassian.molexcloud.com/scm/iasi/molex.iot.prov.diservice.git"
+  ssh: "ssh://git@bitbucket.atlassian.molexcloud.com/iasi/molex.iot.prov.diservice.git"
+molex.iot.prov.fidoiot:
+  url: "https://bitbucket.atlassian.molexcloud.com/scm/iasi/molex.iot.prov.fidoiot.git"
+  ssh: "ssh://git@bitbucket.atlassian.molexcloud.com/iasi/molex.iot.prov.fidoiot.git"
+molex.iot.prov.ownerservice:
+  url: "https://bitbucket.atlassian.molexcloud.com/scm/iasi/molex.iot.prov.ownerservice.git"
+  ssh: "ssh://git@bitbucket.atlassian.molexcloud.com/iasi/molex.iot.prov.ownerservice.git"
+molex.iot.prov.rv:
+  url: "https://bitbucket.atlassian.molexcloud.com/scm/iasi/molex.iot.prov.rv.git"
+  ssh: "ssh://git@bitbucket.atlassian.molexcloud.com/iasi/molex.iot.prov.rv.git"
