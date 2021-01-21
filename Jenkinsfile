@@ -65,7 +65,6 @@ pipeline {
             }          
           } catch(Exception e) {
             echo "No payload present, using default configuration."
-            settings.PROJECT_REPOS = project_repos
 
           }
 
