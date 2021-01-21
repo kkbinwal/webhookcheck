@@ -28,11 +28,12 @@ def isValidPR(hookPayload) {
     print("payload is:${payload}")
 
     def eventKey = payload.eventKey
+    print("eventKey is:${eventKey}")
 
     if(eventKey != null) {
         if(eventKey.startsWith("pr")) {
-            def fromMaster = eventKey.pullRequest.fromRef.id.split('/')[-1]
-            def toMaster = eventKey.pullRequest.toRef.id.split('/')[-1]
+            def fromMaster = payload.pullRequest.fromRef.id.split('/')[-1]
+            def toMaster = payload.pullRequest.toRef.id.split('/')[-1]
             if(fromMaster == null || toMaster == null)return false
             if(fromMaster.equals("master") || toMaster.equals("master")) {
                 return true
