@@ -21,14 +21,14 @@ PROJECT_URL = 'https://bitbucket.atlassian.molexcloud.com/scm/iasi/'
 
 
 def isValidPR(hookPayload) {
-    def payload = readJSON file: hookPayload
+    def payload = readJSON text: hookPayload
     def eventKey = payload.eventKey
     if(eventKey != null) {
         if(eventKey.startsWith("pr")) {
             def srcBranch = payload.pullRequest.fromRef.id.split('/')[-1]
             def targetBranch = payload.pullRequest.toRef.id.split('/')[-1]
-            def error_msg = "PR Error: neither source branch nor target branch is master"
-            if(fromMaster == null || toMaster == null || (!srcBranch.equals("master") && !targetBranch.equals("master"))){
+            def error_msg = "PR Error: Either source branch or  target branch should be master"
+            if(srcBranch == null || targetBranch == null || (!srcBranch.equals("master") && !targetBranch.equals("master"))){
                 print("${error_msg}")
                 return false
             }
