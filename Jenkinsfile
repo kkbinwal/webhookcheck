@@ -60,8 +60,8 @@ pipeline {
 
           try {
 
-            def inputFile = new File('sample_webhook.json')
-            if(isValidPR(inputFile)){
+            //def inputFile = new File('sample_webhook.json')
+            if(isValidPR('sample_webhook.json')){
               print("valid PR")
             }  
             else{
