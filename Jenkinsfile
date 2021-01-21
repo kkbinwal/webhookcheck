@@ -56,8 +56,8 @@ pipeline {
 
           try {
 
-
-            if(isValidPR(sample_webhook.json)){
+            def inputFile = new File('.//sample_webhook.json')
+            if(isValidPR(inputFile)){
               print("valid PR")
             }  
             else{
