@@ -65,6 +65,7 @@ pipeline {
             }          
           } catch(Exception e) {
             echo "No payload present, using default configuration."
+              print("${e.message}")
 
           }
 
